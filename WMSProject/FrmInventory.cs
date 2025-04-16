@@ -23,7 +23,9 @@ namespace WMSProject
 
         private void FrmInventory_Load(object sender, EventArgs e)
         {
-            database = new Database("localhost", "root", "root", "warehousedb", "3306");
+            //Connect database
+            Database database = Database.GetInstance();
+            database.connectDB("localhost", "root", "root", "warehousedb", "3306");
             mySqlConnection = database.Connect();
             mySqlConnection.Open();
         }

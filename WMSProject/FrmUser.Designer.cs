@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox4 = new TextBox();
-            label4 = new Label();
             button6 = new Button();
             button5 = new Button();
             listBox1 = new ListBox();
@@ -50,24 +48,6 @@
             button1 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // textBox4
-            // 
-            textBox4.Anchor = AnchorStyles.None;
-            textBox4.Location = new Point(406, 63);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(164, 23);
-            textBox4.TabIndex = 33;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Location = new Point(340, 66);
-            label4.Name = "label4";
-            label4.Size = new Size(63, 15);
-            label4.TabIndex = 32;
-            label4.Text = "Username:";
             // 
             // button6
             // 
@@ -113,7 +93,7 @@
             // button4
             // 
             button4.Anchor = AnchorStyles.None;
-            button4.Location = new Point(245, 33);
+            button4.Location = new Point(150, 359);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 27;
@@ -123,7 +103,7 @@
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.None;
-            textBox3.Location = new Point(75, 34);
+            textBox3.Location = new Point(406, 63);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(164, 23);
             textBox3.TabIndex = 26;
@@ -132,7 +112,7 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(22, 37);
+            label3.Location = new Point(353, 66);
             label3.Name = "label3";
             label3.Size = new Size(47, 15);
             label3.TabIndex = 25;
@@ -255,8 +235,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(599, 414);
-            Controls.Add(textBox4);
-            Controls.Add(label4);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(listBox1);
@@ -281,9 +259,6 @@
         }
 
         #endregion
-
-        private TextBox textBox4;
-        private Label label4;
         private Button button6;
         private Button button5;
         private ListBox listBox1;

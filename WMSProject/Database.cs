@@ -6,18 +6,43 @@ using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
 using Microsoft.VisualBasic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.ComponentModel;
 
 namespace WMSProject
 {
     public class Database
     {
-        public String ServerAddress { get; set; }
-        public String UserName { get; set; }
-        public String Password { get; set; }
-        public String DatabaseName { get; set; }
-        public String PortNumber { get; set; }
+        private static Database instance;
+        private String ServerAddress { get; set; }
+        private String UserName { get; set; }
+        private String Password { get; set; }
+        private String DatabaseName { get; set; }
+        private String PortNumber { get; set; }
 
-        public Database(string serverAddress, string userName, string password, string databaseName, string portNumber)
+        private Database() 
+        {
+            ServerAddress = this.ServerAddress;
+            UserName = this.UserName;
+            Password = this.Password;
+            DatabaseName = this.DatabaseName;
+            PortNumber = this.PortNumber;
+
+        }
+
+        public static Database GetInstance()
+        {
+            if (instance == null)
+            {
+                if (instance == null)
+                {
+                    instance = new Database();
+                }
+            }
+            return instance;
+        }
+
+        public void connectDB(string serverAddress, string userName, string password, string databaseName, string portNumber)
         {
             ServerAddress = serverAddress;
             UserName = userName;

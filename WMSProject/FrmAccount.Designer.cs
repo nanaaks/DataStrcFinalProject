@@ -35,7 +35,7 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             button1 = new Button();
-            button2 = new Button();
+            btnCancel = new Button();
             SuspendLayout();
             // 
             // label1
@@ -95,21 +95,22 @@
             button1.Text = "Confirm";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancel
             // 
-            button2.Location = new Point(165, 169);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 7;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            btnCancel.Location = new Point(165, 169);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 7;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // FrmAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(280, 213);
-            Controls.Add(button2);
+            Controls.Add(btnCancel);
             Controls.Add(button1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -132,6 +133,6 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private Button button1;
-        private Button button2;
+        private Button btnCancel;
     }
 }

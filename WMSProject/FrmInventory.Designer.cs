@@ -133,6 +133,7 @@
             btnExit.TabIndex = 43;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // btnRemove
             // 
@@ -177,6 +178,7 @@
             btnAdd.TabIndex = 39;
             btnAdd.Text = "Add Item";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label1
             // 

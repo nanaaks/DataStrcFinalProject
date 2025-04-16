@@ -125,6 +125,7 @@
             btnCancel.TabIndex = 34;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // button2
             // 

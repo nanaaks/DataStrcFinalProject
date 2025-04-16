@@ -16,5 +16,19 @@ namespace WMSProject
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmMain();
+            newForm.Show();
+            this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmProduct();
+            newForm.Show();
+            this.Close();
+        }
     }
 }

@@ -16,5 +16,29 @@ namespace WMSProject
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmInventory();
+            newForm.Show();
+            this.Close();
+        }
+
+        private bool IsValidData()
+        {
+            bool success = true;
+            string errorMessage = "";
+
+            errorMessage += Validator.IsPresent(txtNumber.Text, txtNumber.Tag.ToString());
+            errorMessage += Validator.IsPresent(txtName.Text, txtName.Tag.ToString());
+            errorMessage += Validator.IsValidEmail(txtCategory.Text, txtCategory.Tag.ToString());
+
+            if (errorMessage != "")
+            {
+                success = false;
+                MessageBox.Show(errorMessage, "Entry Error");
+            }
+            return success;
+        }
     }
 }

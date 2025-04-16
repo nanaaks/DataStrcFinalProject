@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            btnInventory = new Button();
+            btnOrder = new Button();
+            btnUser = new Button();
+            btnLogout = new Button();
+            btnAccount = new Button();
             label1 = new Label();
             lblUser = new Label();
             label3 = new Label();
@@ -40,50 +40,55 @@
             label5 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnInventory
             // 
-            button1.Location = new Point(56, 115);
-            button1.Name = "button1";
-            button1.Size = new Size(165, 33);
-            button1.TabIndex = 0;
-            button1.Text = "Inventory Management";
-            button1.UseVisualStyleBackColor = true;
+            btnInventory.Location = new Point(56, 115);
+            btnInventory.Name = "btnInventory";
+            btnInventory.Size = new Size(165, 33);
+            btnInventory.TabIndex = 0;
+            btnInventory.Text = "Inventory Management";
+            btnInventory.UseVisualStyleBackColor = true;
+            btnInventory.Click += btnInventory_Click;
             // 
-            // button2
+            // btnOrder
             // 
-            button2.Location = new Point(56, 186);
-            button2.Name = "button2";
-            button2.Size = new Size(165, 29);
-            button2.TabIndex = 1;
-            button2.Text = "Order Management";
-            button2.UseVisualStyleBackColor = true;
+            btnOrder.Location = new Point(56, 186);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(165, 29);
+            btnOrder.TabIndex = 1;
+            btnOrder.Text = "Order Management";
+            btnOrder.UseVisualStyleBackColor = true;
+            btnOrder.Click += btnOrder_Click;
             // 
-            // button3
+            // btnUser
             // 
-            button3.Location = new Point(56, 259);
-            button3.Name = "button3";
-            button3.Size = new Size(165, 29);
-            button3.TabIndex = 2;
-            button3.Text = "User Management";
-            button3.UseVisualStyleBackColor = true;
+            btnUser.Location = new Point(56, 259);
+            btnUser.Name = "btnUser";
+            btnUser.Size = new Size(165, 29);
+            btnUser.TabIndex = 2;
+            btnUser.Text = "User Management";
+            btnUser.UseVisualStyleBackColor = true;
+            btnUser.Click += btnUser_Click;
             // 
-            // button4
+            // btnLogout
             // 
-            button4.Location = new Point(261, 298);
-            button4.Name = "button4";
-            button4.Size = new Size(62, 26);
-            button4.TabIndex = 3;
-            button4.Text = "Logout";
-            button4.UseVisualStyleBackColor = true;
+            btnLogout.Location = new Point(261, 298);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(62, 26);
+            btnLogout.TabIndex = 3;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
-            // button5
+            // btnAccount
             // 
-            button5.Location = new Point(184, 37);
-            button5.Name = "button5";
-            button5.Size = new Size(139, 33);
-            button5.TabIndex = 4;
-            button5.Text = "Account Management";
-            button5.UseVisualStyleBackColor = true;
+            btnAccount.Location = new Point(184, 37);
+            btnAccount.Name = "btnAccount";
+            btnAccount.Size = new Size(139, 33);
+            btnAccount.TabIndex = 4;
+            btnAccount.Text = "Account Management";
+            btnAccount.UseVisualStyleBackColor = true;
+            btnAccount.Click += btnAccount_Click;
             // 
             // label1
             // 
@@ -140,11 +145,11 @@
             Controls.Add(label3);
             Controls.Add(lblUser);
             Controls.Add(label1);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnAccount);
+            Controls.Add(btnLogout);
+            Controls.Add(btnUser);
+            Controls.Add(btnOrder);
+            Controls.Add(btnInventory);
             Name = "FrmMain";
             Text = "FrmMain";
             Load += FrmMain_Load;
@@ -154,11 +159,11 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button btnInventory;
+        private Button btnOrder;
+        private Button btnUser;
+        private Button btnLogout;
+        private Button btnAccount;
         private Label label1;
         private Label lblUser;
         private Label label3;

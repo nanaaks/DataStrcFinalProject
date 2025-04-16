@@ -32,8 +32,8 @@
             btnCancel = new Button();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUser = new TextBox();
+            txtPass = new TextBox();
             SuspendLayout();
             // 
             // btnLogin
@@ -44,6 +44,7 @@
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnCancel
             // 
@@ -53,6 +54,7 @@
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // label1
             // 
@@ -72,27 +74,29 @@
             label2.TabIndex = 3;
             label2.Text = "Password:";
             // 
-            // textBox1
+            // txtUser
             // 
-            textBox1.Location = new Point(120, 77);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 4;
+            txtUser.Location = new Point(120, 77);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(100, 23);
+            txtUser.TabIndex = 4;
+            txtUser.Tag = "Username";
             // 
-            // textBox2
+            // txtPass
             // 
-            textBox2.Location = new Point(120, 129);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 5;
+            txtPass.Location = new Point(120, 129);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(100, 23);
+            txtPass.TabIndex = 5;
+            txtPass.Tag = "Password";
             // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(295, 272);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPass);
+            Controls.Add(txtUser);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnCancel);
@@ -109,7 +113,7 @@
         private Button btnCancel;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUser;
+        private TextBox txtPass;
     }
 }

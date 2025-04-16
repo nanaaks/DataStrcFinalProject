@@ -19,8 +19,42 @@ namespace WMSProject
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //TODO
-            //lblUser.Text = FrmLogin.user;
+            lblUser.Text = FrmLogin.user;
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmInventory();
+            newForm.Show();
+            this.Close();
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmOrder();
+            newForm.Show();
+            this.Close();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmUser();
+            newForm.Show();
+            this.Close();
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmAccount();
+            newForm.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var newForm = new FrmLogin();
+            newForm.Show();
+            this.Close();
         }
     }
 }

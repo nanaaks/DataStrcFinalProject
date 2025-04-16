@@ -1,3 +1,5 @@
+using MySqlConnector;
+
 namespace WMSProject
 {
     public partial class FrmLogin : Form
@@ -6,9 +8,16 @@ namespace WMSProject
         {
             InitializeComponent();
         }
+        public Database database;
+        public MySqlConnection mySqlConnection;
 
         public static String user = "";
         List<String> users = new List<String>();
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            database = new Database("localhost", "root", "root", "warehousedb", "3306");
+        }
 
         private bool isValid()
         {
@@ -29,34 +38,44 @@ namespace WMSProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
+            mySqlConnection = database.Connect();
+            mySqlConnection.Open();
+            if (mySqlConnection != null && mySqlConnection.State == System.Data.ConnectionState.Open)
             {
-                if (isValid())
+                MessageBox.Show(" Connection successful!!!", "Database Connection", MessageBoxButtons.OK);
+            } 
+            else
+            {
+                MessageBox.Show(" Connection error!!!", "Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                try
                 {
-                    string username = txtUser.Text;
-                    string password = txtPass.Text;
-                    //Check username and password
-                    if ((username != "admin") && (password != "12345"))
+                    if (isValid())
                     {
-                        txtUser.Clear();
-                        txtPass.Clear();
-                        MessageBox.Show("Incorrect Username/Password");
-                    }
-                    else
-                    {
-                        user = username;
-                        var newForm = new FrmMain();
-                        newForm.Show();
-                        this.Hide();
+                        string username = txtUser.Text;
+                        string password = txtPass.Text;
+                        //Check username and password
+                        if ((username != "admin") && (password != "12345"))
+                        {
+                            txtUser.Clear();
+                            txtPass.Clear();
+                            MessageBox.Show("Incorrect Username/Password");
+                        }
+                        else
+                        {
+                            user = username;
+                            var newForm = new FrmMain();
+                            newForm.Show();
+                            this.Hide();
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n\n" +
-                    ex.GetType().ToString() + "\n" +
-                    ex.StackTrace, "Exception");
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\n\n" +
+                        ex.GetType().ToString() + "\n" +
+                        ex.StackTrace, "Exception");
+                }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

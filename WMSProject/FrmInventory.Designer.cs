@@ -37,7 +37,6 @@
             textBox4 = new TextBox();
             btnExit = new Button();
             btnRemove = new Button();
-            inventoryList = new ListBox();
             btnUpdate = new Button();
             btnAdd = new Button();
             label1 = new Label();
@@ -51,8 +50,10 @@
             groupBox1 = new GroupBox();
             button2 = new Button();
             button1 = new Button();
+            dataGridAll = new DataGridView();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridAll).BeginInit();
             SuspendLayout();
             // 
             // button3
@@ -93,6 +94,7 @@
             btnShow.TabIndex = 47;
             btnShow.Text = "Show Items";
             btnShow.UseVisualStyleBackColor = true;
+            btnShow.Click += btnShow_Click;
             // 
             // button4
             // 
@@ -145,17 +147,6 @@
             btnRemove.TabIndex = 42;
             btnRemove.Text = "Remove Item";
             btnRemove.UseVisualStyleBackColor = true;
-            // 
-            // inventoryList
-            // 
-            inventoryList.Anchor = AnchorStyles.None;
-            inventoryList.FormattingEnabled = true;
-            inventoryList.ItemHeight = 15;
-            inventoryList.Location = new Point(24, 157);
-            inventoryList.Margin = new Padding(3, 2, 3, 2);
-            inventoryList.Name = "inventoryList";
-            inventoryList.Size = new Size(388, 304);
-            inventoryList.TabIndex = 41;
             // 
             // btnUpdate
             // 
@@ -287,11 +278,20 @@
             button1.Text = "Expired";
             button1.UseVisualStyleBackColor = true;
             // 
+            // dataGridAll
+            // 
+            dataGridAll.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridAll.Location = new Point(24, 148);
+            dataGridAll.Name = "dataGridAll";
+            dataGridAll.Size = new Size(390, 321);
+            dataGridAll.TabIndex = 51;
+            // 
             // FrmInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(450, 562);
+            Controls.Add(dataGridAll);
             Controls.Add(button3);
             Controls.Add(textBox5);
             Controls.Add(label6);
@@ -301,7 +301,6 @@
             Controls.Add(textBox4);
             Controls.Add(btnExit);
             Controls.Add(btnRemove);
-            Controls.Add(inventoryList);
             Controls.Add(btnUpdate);
             Controls.Add(btnAdd);
             Controls.Add(label1);
@@ -309,9 +308,11 @@
             Controls.Add(groupBox1);
             Name = "FrmInventory";
             Text = "FrmInventory";
+            Load += FrmInventory_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridAll).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -327,7 +328,6 @@
         private TextBox textBox4;
         private Button btnExit;
         private Button btnRemove;
-        private ListBox inventoryList;
         private Button btnUpdate;
         private Button btnAdd;
         private Label label1;
@@ -341,5 +341,6 @@
         private GroupBox groupBox1;
         private Button button2;
         private Button button1;
+        private DataGridView dataGridAll;
     }
 }

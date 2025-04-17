@@ -311,6 +311,7 @@
             Controls.Add(button1);
             Name = "FrmOrder";
             Text = "FrmOrder";
+            Load += FrmOrder_Load;
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);

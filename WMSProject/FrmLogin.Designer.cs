@@ -34,6 +34,7 @@
             label2 = new Label();
             txtUser = new TextBox();
             txtPass = new TextBox();
+            btnTest = new Button();
             SuspendLayout();
             // 
             // btnLogin
@@ -90,11 +91,22 @@
             txtPass.TabIndex = 5;
             txtPass.Tag = "Password";
             // 
+            // btnTest
+            // 
+            btnTest.Location = new Point(12, 12);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(117, 23);
+            btnTest.TabIndex = 6;
+            btnTest.Text = "Test Connection";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(295, 272);
+            Controls.Add(btnTest);
             Controls.Add(txtPass);
             Controls.Add(txtUser);
             Controls.Add(label2);
@@ -103,7 +115,6 @@
             Controls.Add(btnLogin);
             Name = "FrmLogin";
             Text = "Login";
-            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +127,6 @@
         private Label label2;
         private TextBox txtUser;
         private TextBox txtPass;
+        private Button btnTest;
     }
 }

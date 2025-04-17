@@ -50,10 +50,9 @@
             groupBox1 = new GroupBox();
             button2 = new Button();
             button1 = new Button();
-            dataGridAll = new DataGridView();
+            listBox1 = new ListBox();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridAll).BeginInit();
             SuspendLayout();
             // 
             // button3
@@ -278,20 +277,21 @@
             button1.Text = "Expired";
             button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridAll
+            // listBox1
             // 
-            dataGridAll.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridAll.Location = new Point(24, 148);
-            dataGridAll.Name = "dataGridAll";
-            dataGridAll.Size = new Size(390, 321);
-            dataGridAll.TabIndex = 51;
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(24, 148);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(390, 319);
+            listBox1.TabIndex = 51;
             // 
             // FrmInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(450, 562);
-            Controls.Add(dataGridAll);
+            Controls.Add(listBox1);
             Controls.Add(button3);
             Controls.Add(textBox5);
             Controls.Add(label6);
@@ -312,7 +312,6 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridAll).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -341,6 +340,6 @@
         private GroupBox groupBox1;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridAll;
+        private ListBox listBox1;
     }
 }

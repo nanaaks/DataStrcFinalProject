@@ -7,27 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySqlConnector;
+using Org.BouncyCastle.Bcpg;
 
 namespace WMSProject
 {
     public partial class FrmInventory : Form
     {
+        public static List<Product> products = new List<Product>();
+
         public FrmInventory()
         {
             InitializeComponent();
         }
 
-        public Database database;
-        public MySqlConnection mySqlConnection;
-
         private void FrmInventory_Load(object sender, EventArgs e)
         {
-            //Connect database
-            Database database = Database.GetInstance();
-            database.connectDB("localhost", "root", "root", "warehousedb", "3306");
-            mySqlConnection = database.Connect();
-            mySqlConnection.Open();
+            updateList();
+        }
+
+        public void updateList()
+        {
+            // Clear listbox (prevent repeating items)  and then redisplay all the items
+
+            listBox1.Items.Clear();
+            foreach (Product product in products)
+            {
+                listBox1.Items.Add(product);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -46,19 +52,7 @@ namespace WMSProject
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            try
-            {
-                String qStr = "SELECT * FROM inventory";
-                MySqlCommand mySqlCommand = new MySqlCommand(qStr, mySqlConnection);
-                MySqlDataReader dataReader = mySqlCommand.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dataGridAll.DataSource = dataTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in Database Operation", "Error", MessageBoxButtons.OK);
-            }
+            updateList();
         }
     }
 }

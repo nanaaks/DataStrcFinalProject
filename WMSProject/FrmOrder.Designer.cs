@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button10 = new Button();
+            btnView = new Button();
             groupBox3 = new GroupBox();
             radioButton13 = new RadioButton();
             radioButton12 = new RadioButton();
@@ -48,22 +48,24 @@
             label5 = new Label();
             button6 = new Button();
             textBox3 = new TextBox();
-            listBox1 = new ListBox();
             btnExit = new Button();
-            button2 = new Button();
             button1 = new Button();
+            btnPending = new Button();
+            dataOrders = new DataGridView();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataOrders).BeginInit();
             SuspendLayout();
             // 
-            // button10
+            // btnView
             // 
-            button10.Anchor = AnchorStyles.None;
-            button10.Location = new Point(27, 507);
-            button10.Name = "button10";
-            button10.Size = new Size(149, 23);
-            button10.TabIndex = 30;
-            button10.Text = "View Order History";
-            button10.UseVisualStyleBackColor = true;
+            btnView.Anchor = AnchorStyles.None;
+            btnView.Location = new Point(34, 507);
+            btnView.Name = "btnView";
+            btnView.Size = new Size(149, 23);
+            btnView.TabIndex = 30;
+            btnView.Text = "View Order History";
+            btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnView_Click;
             // 
             // groupBox3
             // 
@@ -86,7 +88,7 @@
             groupBox3.Controls.Add(label5);
             groupBox3.Controls.Add(button6);
             groupBox3.Controls.Add(textBox3);
-            groupBox3.Location = new Point(27, 29);
+            groupBox3.Location = new Point(34, 29);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(429, 227);
             groupBox3.TabIndex = 29;
@@ -257,20 +259,10 @@
             textBox3.Size = new Size(113, 23);
             textBox3.TabIndex = 15;
             // 
-            // listBox1
-            // 
-            listBox1.Anchor = AnchorStyles.None;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(27, 262);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(334, 229);
-            listBox1.TabIndex = 28;
-            // 
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.None;
-            btnExit.Location = new Point(381, 507);
+            btnExit.Location = new Point(388, 507);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(75, 23);
             btnExit.TabIndex = 27;
@@ -278,48 +270,58 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.None;
-            button2.Location = new Point(369, 311);
-            button2.Name = "button2";
-            button2.Size = new Size(87, 23);
-            button2.TabIndex = 26;
-            button2.Text = "Update Order";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(367, 262);
+            button1.Location = new Point(374, 262);
             button1.Name = "button1";
             button1.Size = new Size(85, 23);
             button1.TabIndex = 25;
             button1.Text = "Create Order";
             button1.UseVisualStyleBackColor = true;
             // 
+            // btnPending
+            // 
+            btnPending.Anchor = AnchorStyles.None;
+            btnPending.Location = new Point(374, 312);
+            btnPending.Name = "btnPending";
+            btnPending.Size = new Size(101, 23);
+            btnPending.TabIndex = 31;
+            btnPending.Text = "Pending Orders";
+            btnPending.UseVisualStyleBackColor = true;
+            btnPending.Click += btnPending_Click;
+            // 
+            // dataOrders
+            // 
+            dataOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataOrders.Location = new Point(34, 262);
+            dataOrders.Name = "dataOrders";
+            dataOrders.Size = new Size(336, 239);
+            dataOrders.TabIndex = 32;
+            // 
             // FrmOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 558);
-            Controls.Add(button10);
+            ClientSize = new Size(496, 558);
+            Controls.Add(dataOrders);
+            Controls.Add(btnPending);
+            Controls.Add(btnView);
             Controls.Add(groupBox3);
-            Controls.Add(listBox1);
             Controls.Add(btnExit);
-            Controls.Add(button2);
             Controls.Add(button1);
             Name = "FrmOrder";
             Text = "FrmOrder";
             Load += FrmOrder_Load;
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataOrders).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button10;
+        private Button btnView;
         private GroupBox groupBox3;
         private RadioButton radioButton13;
         private RadioButton radioButton12;
@@ -339,9 +341,9 @@
         private Label label5;
         private Button button6;
         private TextBox textBox3;
-        private ListBox listBox1;
         private Button btnExit;
-        private Button button2;
         private Button button1;
+        private Button btnPending;
+        private DataGridView dataOrders;
     }
 }

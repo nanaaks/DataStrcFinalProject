@@ -28,56 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button6 = new Button();
-            button5 = new Button();
-            listBox1 = new ListBox();
+            btnReset = new Button();
+            btnShow = new Button();
             btnExit = new Button();
-            button4 = new Button();
-            textBox3 = new TextBox();
+            btnSearch = new Button();
+            txtUser = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtLname = new TextBox();
+            txtFname = new TextBox();
             groupBox1 = new GroupBox();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rbWorker = new RadioButton();
+            rbSupervisor = new RadioButton();
+            rbManager = new RadioButton();
             label2 = new Label();
             label1 = new Label();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnUpdate = new Button();
+            btnRemove = new Button();
+            btnAdd = new Button();
+            dataUsers = new DataGridView();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataUsers).BeginInit();
             SuspendLayout();
             // 
-            // button6
+            // btnReset
             // 
-            button6.Anchor = AnchorStyles.None;
-            button6.Location = new Point(340, 314);
-            button6.Name = "button6";
-            button6.Size = new Size(97, 23);
-            button6.TabIndex = 31;
-            button6.Text = "Reset Password";
-            button6.UseVisualStyleBackColor = true;
+            btnReset.Anchor = AnchorStyles.None;
+            btnReset.Location = new Point(340, 314);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(97, 23);
+            btnReset.TabIndex = 31;
+            btnReset.Text = "Reset Password";
+            btnReset.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnShow
             // 
-            button5.Anchor = AnchorStyles.None;
-            button5.Location = new Point(22, 359);
-            button5.Name = "button5";
-            button5.Size = new Size(92, 23);
-            button5.TabIndex = 30;
-            button5.Text = "Show All Users";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            listBox1.Anchor = AnchorStyles.None;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(22, 63);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(298, 274);
-            listBox1.TabIndex = 29;
+            btnShow.Anchor = AnchorStyles.None;
+            btnShow.Location = new Point(22, 359);
+            btnShow.Name = "btnShow";
+            btnShow.Size = new Size(92, 23);
+            btnShow.TabIndex = 30;
+            btnShow.Text = "Show All Users";
+            btnShow.UseVisualStyleBackColor = true;
+            btnShow.Click += btnShow_Click;
             // 
             // btnExit
             // 
@@ -90,23 +82,23 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // button4
+            // btnSearch
             // 
-            button4.Anchor = AnchorStyles.None;
-            button4.Location = new Point(150, 359);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 27;
-            button4.Text = "Search";
-            button4.UseVisualStyleBackColor = true;
+            btnSearch.Anchor = AnchorStyles.None;
+            btnSearch.Location = new Point(150, 359);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(75, 23);
+            btnSearch.TabIndex = 27;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtUser
             // 
-            textBox3.Anchor = AnchorStyles.None;
-            textBox3.Location = new Point(406, 63);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(164, 23);
-            textBox3.TabIndex = 26;
+            txtUser.Anchor = AnchorStyles.None;
+            txtUser.Location = new Point(406, 63);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(164, 23);
+            txtUser.TabIndex = 26;
             // 
             // label3
             // 
@@ -118,28 +110,28 @@
             label3.TabIndex = 25;
             label3.Text = "User ID:";
             // 
-            // textBox2
+            // txtLname
             // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.Location = new Point(406, 144);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(164, 23);
-            textBox2.TabIndex = 24;
+            txtLname.Anchor = AnchorStyles.None;
+            txtLname.Location = new Point(406, 144);
+            txtLname.Name = "txtLname";
+            txtLname.Size = new Size(164, 23);
+            txtLname.TabIndex = 24;
             // 
-            // textBox1
+            // txtFname
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(406, 102);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(164, 23);
-            textBox1.TabIndex = 23;
+            txtFname.Anchor = AnchorStyles.None;
+            txtFname.Location = new Point(406, 102);
+            txtFname.Name = "txtFname";
+            txtFname.Size = new Size(164, 23);
+            txtFname.TabIndex = 23;
             // 
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.None;
-            groupBox1.Controls.Add(radioButton3);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(rbWorker);
+            groupBox1.Controls.Add(rbSupervisor);
+            groupBox1.Controls.Add(rbManager);
             groupBox1.Location = new Point(340, 192);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(138, 100);
@@ -147,38 +139,38 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Job Title";
             // 
-            // radioButton3
+            // rbWorker
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(10, 72);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(63, 19);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Worker";
-            radioButton3.UseVisualStyleBackColor = true;
+            rbWorker.AutoSize = true;
+            rbWorker.Location = new Point(10, 72);
+            rbWorker.Name = "rbWorker";
+            rbWorker.Size = new Size(63, 19);
+            rbWorker.TabIndex = 2;
+            rbWorker.TabStop = true;
+            rbWorker.Text = "Worker";
+            rbWorker.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbSupervisor
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(10, 47);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(80, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Supervisor";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbSupervisor.AutoSize = true;
+            rbSupervisor.Location = new Point(10, 47);
+            rbSupervisor.Name = "rbSupervisor";
+            rbSupervisor.Size = new Size(80, 19);
+            rbSupervisor.TabIndex = 1;
+            rbSupervisor.TabStop = true;
+            rbSupervisor.Text = "Supervisor";
+            rbSupervisor.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbManager
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(10, 22);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(72, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Manager";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbManager.AutoSize = true;
+            rbManager.Location = new Point(10, 22);
+            rbManager.Name = "rbManager";
+            rbManager.Size = new Size(72, 19);
+            rbManager.TabIndex = 0;
+            rbManager.TabStop = true;
+            rbManager.Text = "Manager";
+            rbManager.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -200,82 +192,93 @@
             label1.TabIndex = 20;
             label1.Text = "First Name:";
             // 
-            // button3
+            // btnUpdate
             // 
-            button3.Anchor = AnchorStyles.None;
-            button3.Location = new Point(340, 359);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 19;
-            button3.Text = "Update";
-            button3.UseVisualStyleBackColor = true;
+            btnUpdate.Anchor = AnchorStyles.None;
+            btnUpdate.Location = new Point(340, 359);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(75, 23);
+            btnUpdate.TabIndex = 19;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRemove
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.Location = new Point(245, 359);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 18;
-            button2.Text = "Remove";
-            button2.UseVisualStyleBackColor = true;
+            btnRemove.Anchor = AnchorStyles.None;
+            btnRemove.Location = new Point(245, 359);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(75, 23);
+            btnRemove.TabIndex = 18;
+            btnRemove.Text = "Remove";
+            btnRemove.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAdd
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(421, 359);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 17;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            btnAdd.Anchor = AnchorStyles.None;
+            btnAdd.Location = new Point(421, 359);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 17;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // dataUsers
+            // 
+            dataUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataUsers.Location = new Point(22, 63);
+            dataUsers.Name = "dataUsers";
+            dataUsers.Size = new Size(298, 290);
+            dataUsers.TabIndex = 32;
             // 
             // FrmUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(599, 414);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(listBox1);
+            Controls.Add(dataUsers);
+            Controls.Add(btnReset);
+            Controls.Add(btnShow);
             Controls.Add(btnExit);
-            Controls.Add(button4);
-            Controls.Add(textBox3);
+            Controls.Add(btnSearch);
+            Controls.Add(txtUser);
             Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtLname);
+            Controls.Add(txtFname);
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnRemove);
+            Controls.Add(btnAdd);
             Name = "FrmUser";
             Text = "FrmUser";
+            Load += FrmUser_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button button6;
-        private Button button5;
-        private ListBox listBox1;
+        private Button btnReset;
+        private Button btnShow;
         private Button btnExit;
-        private Button button4;
-        private TextBox textBox3;
+        private Button btnSearch;
+        private TextBox txtUser;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtLname;
+        private TextBox txtFname;
         private GroupBox groupBox1;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rbWorker;
+        private RadioButton rbSupervisor;
+        private RadioButton rbManager;
         private Label label2;
         private Label label1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnUpdate;
+        private Button btnRemove;
+        private Button btnAdd;
+        private DataGridView dataUsers;
     }
 }

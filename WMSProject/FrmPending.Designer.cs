@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnExit = new Button();
-            listPending = new ListBox();
+            lboxPending = new ListBox();
             btnCancel = new Button();
             btnApprove = new Button();
             SuspendLayout();
@@ -45,15 +45,15 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // listPending
+            // lboxPending
             // 
-            listPending.Anchor = AnchorStyles.None;
-            listPending.FormattingEnabled = true;
-            listPending.ItemHeight = 15;
-            listPending.Location = new Point(39, 43);
-            listPending.Name = "listPending";
-            listPending.Size = new Size(334, 229);
-            listPending.TabIndex = 34;
+            lboxPending.Anchor = AnchorStyles.None;
+            lboxPending.FormattingEnabled = true;
+            lboxPending.ItemHeight = 15;
+            lboxPending.Location = new Point(39, 43);
+            lboxPending.Name = "lboxPending";
+            lboxPending.Size = new Size(334, 229);
+            lboxPending.TabIndex = 34;
             // 
             // btnCancel
             // 
@@ -83,7 +83,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(422, 354);
             Controls.Add(btnExit);
-            Controls.Add(listPending);
+            Controls.Add(lboxPending);
             Controls.Add(btnCancel);
             Controls.Add(btnApprove);
             Name = "FrmPending";
@@ -95,7 +95,7 @@
         #endregion
 
         private Button btnExit;
-        private ListBox listPending;
+        private ListBox lboxPending;
         private Button btnCancel;
         private Button btnApprove;
     }
